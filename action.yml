@@ -1,0 +1,16 @@
+name: Get version bump
+description: Determine which version (major.minor.patch) to bump based on the head commit message
+
+outputs:
+  bump:
+    description: Which version to bump (major, minor, patch or none)
+    value: ${{ steps.get-bump.outputs.bump }}
+
+
+runs:
+  using: composite
+  steps:
+    -
+      id: get-bump
+      run: ${{ github.action_path }}/get_version_bump.sh ${{ github.event.commits[0].message }}
+      shell: bash
