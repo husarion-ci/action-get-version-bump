@@ -19,6 +19,4 @@ else
 	bump=none
 fi
 
-echo "Bump: $bump"
-
-echo "::set-output name=bump::$bump"
+echo "$bump"

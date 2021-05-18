@@ -12,5 +12,5 @@ runs:
   steps:
     -
       id: get-bump
-      run: ${{ github.action_path }}/get_version_bump.sh ${{ github.event.commits[0].message }}
+      run: echo ::set-output name=bump::$(${{ github.action_path }}/get_version_bump.sh ${{ github.event.commits[0].message }})
       shell: bash
