@@ -4,15 +4,15 @@ function has_substring() {
    [[ "$1" =~ $2 ]]
 }
 
-commit="$1"
+text="$1"
 
-if has_substring "$commit" "bump::major"; then
+if has_substring "$text" "bump::major"; then
 	bump=major
 
-elif has_substring "$commit" "bump::minor"; then
+elif has_substring "$text" "bump::minor"; then
 	bump=minor
 
-elif has_substring "$commit" "bump::patch"; then
+elif has_substring "$text" "bump::patch"; then
 	bump=patch
 
 else

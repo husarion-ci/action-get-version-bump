@@ -1,5 +1,11 @@
 name: Get version bump
-description: Determine which version (major.minor.patch) to bump based on the head commit message
+description: Determine which version (major.minor.patch) to bump based on the PR body or provided input
+
+inputs:
+  text:
+    description: Optional text to use instead of the default PR body.
+    required: false
+    default: ${{ github.event.pull_request.body }}
 
 outputs:
   bump:
@@ -12,5 +18,5 @@ runs:
   steps:
     -
       id: get-bump
-      run: echo ::set-output name=bump::$(${{ github.action_path }}/get_version_bump.sh ${{ github.event.commits[0].message }})
+      run: echo ::set-output name=bump::$(${{ github.action_path }}/get_version_bump.sh ${{ inputs.text }})
       shell: bash
