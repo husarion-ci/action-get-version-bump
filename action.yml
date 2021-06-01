@@ -18,5 +18,5 @@ runs:
   steps:
     -
       id: get-bump
-      run: echo ::set-output name=bump::$(${{ github.action_path }}/get_version_bump.sh "${{ inputs.text }}")
+      run: echo ::set-output name=bump::$(${{ github.action_path }}/get_version_bump.sh '${{ inputs.text }}')
       shell: bash
