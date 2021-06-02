@@ -14,9 +14,6 @@ elif has_substring "$text" "bump::minor"; then
 
 elif has_substring "$text" "bump::patch"; then
 	bump=patch
-
-else
-	bump=none
 fi
 
 echo "$bump"
