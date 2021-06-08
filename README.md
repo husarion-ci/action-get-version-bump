@@ -29,7 +29,11 @@ The action has the following outputs:
 
 ### `bump`
 
-If either of the above `bump::` commands is found in the commit message, the output will be 'major', 'minor' or 'patch', respectively. Otherwise, it will be equal to 'none'.
+If either of the above `bump::<version>` commands is found in the commit message, the output will be 'major', 'minor' or 'patch', respectively.
+Otherwise, no `bump` output is set.
+
+If more than one `bump::<version>` command is found, the higher order versions take precedence (i.e. if both `bump::major` and `bump::minor` are found,
+the value of `bump` will be `major`).
 
 # Example
 
