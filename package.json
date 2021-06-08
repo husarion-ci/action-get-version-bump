@@ -1,0 +1,24 @@
+{
+  "name": "action-get-version-bump",
+  "version": "0.3.0",
+  "description": "This GitHub Action determines which version (major.minor.patch) to bump based on the hints in the body of a Pull Request, or in a user-provided string.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/husarion-ci/action-get-version-bump.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/husarion-ci/action-get-version-bump/issues"
+  },
+  "homepage": "https://github.com/husarion-ci/action-get-version-bump#readme",
+  "dependencies": {
+    "@actions/core": "^1.4.0",
+    "@actions/github": "^5.0.0"
+  }
+}
